@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Materiały — Adam</title>
+<meta name="description" content="Darmowe materiały o nauce i o studiach medycznych. Bez zapisów, bez maila — po prostu pobierz.">
+
+<!-- Open Graph: to jest podgląd, który zobaczą ludzie, gdy ktoś wrzuci link dalej -->
+<meta property="og:title" content="Materiały — Adam">
+<meta property="og:description" content="Darmowe materiały o nauce i o studiach medycznych. Bez zapisów, bez maila.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FAF6EC">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --papier:#FAF6EC;
+  --papier-glebszy:#F3EDDF;
+  --atrament:#23201C;
+  --atrament-cichy:#6E655A;
+  --zloto:#A8843A;
+  --zloto-jasne:#C9A65C;
+  --linia:#E3D9C5;
+
+  --serif:"DejaVu Serif","Noto Serif",Georgia,serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  background:var(--papier);
+  color:var(--atrament);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  padding:0 22px;
+  padding-bottom:calc(64px + env(safe-area-inset-bottom));
+}
+
+.otoczka{max-width:620px;margin:0 auto}
+
+/* ---------- nagłówek ---------- */
+
+.szczyt{padding:64px 0 44px}
+
+.podpis{
+  font-family:var(--sans);
+  font-size:11.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--zloto);
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.szczyt h1{
+  font-size:33px;
+  line-height:1.24;
+  font-weight:700;
+  letter-spacing:-.015em;
+  margin-bottom:18px;
+}
+
+.szczyt h1 em{
+  font-style:italic;
+  font-weight:400;
+  color:var(--zloto);
+}
+
+.wstep{
+  color:var(--atrament-cichy);
+  font-size:17px;
+  max-width:44ch;
+}
+
+/* ---------- sekcje ---------- */
+
+.dzial{padding-bottom:52px}
+
+.dzial-glowa{
+  border-left:2px solid var(--zloto);
+  padding-left:16px;
+  margin-bottom:26px;
+}
+
+.dzial-glowa .etykieta{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--zloto);
+  font-weight:600;
+  display:block;
+  margin-bottom:5px;
+}
+
+.dzial-glowa h2{
+  font-size:21px;
+  font-weight:600;
+  line-height:1.35;
+  margin-bottom:4px;
+}
+
+.dzial-glowa p{
+  font-size:15px;
+  color:var(--atrament-cichy);
+  line-height:1.55;
+}
+
+/* ---------- karty ---------- */
+
+.stos{display:flex;flex-direction:column;gap:14px}
+
+.karta{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  background:transparent;
+  border:1px solid var(--linia);
+  border-radius:3px;
+  padding:22px 22px 20px;
+  position:relative;
+  transition:border-color .18s ease,background-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+
+.karta:hover,.karta:focus-visible{
+  border-color:var(--zloto-jasne);
+  background:var(--papier-glebszy);
+  transform:translateY(-1px);
+  box-shadow:0 6px 20px -12px rgba(35,32,28,.28);
+}
+
+.karta:focus-visible{outline:2px solid var(--zloto);outline-offset:3px}
+
+.karta h3{
+  font-size:19px;
+  font-weight:600;
+  line-height:1.35;
+  margin-bottom:8px;
+  padding-right:52px;
+}
+
+.karta .opis{
+  font-size:15.5px;
+  color:var(--atrament-cichy);
+  line-height:1.58;
+  margin-bottom:16px;
+}
+
+.stopka-karty{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  border-top:1px solid var(--linia);
+  padding-top:13px;
+}
+
+.meta{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--atrament-cichy);
+  font-weight:600;
+}
+
+.akcja{
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--zloto);
+  white-space:nowrap;
+}
+
+.akcja span{
+  display:inline-block;
+  transition:transform .18s ease;
+  margin-left:3px;
+}
+
+.karta:hover .akcja span{transform:translateX(3px)}
+
+.znacznik{
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--zloto);
+  background:var(--papier-glebszy);
+  border:1px solid var(--zloto-jasne);
+  border-radius:2px;
+  padding:3px 8px;
+}
+
+/* ---------- stopka ---------- */
+
+.spod{
+  border-top:1px solid var(--linia);
+  padding-top:30px;
+  margin-top:8px;
+}
+
+.spod p{
+  font-size:17px;
+  color:var(--atrament-cichy);
+  margin-bottom:16px;
+  max-width:42ch;
+}
+
+.spod a.wroc{
+  font-family:var(--sans);
+  font-size:11.5px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--atrament);
+  text-decoration:none;
+  border-bottom:2px solid var(--zloto-jasne);
+  padding-bottom:3px;
+  transition:border-color .18s ease;
+}
+
+.spod a.wroc:hover{border-color:var(--zloto)}
+.spod a.wroc:focus-visible{outline:2px solid var(--zloto);outline-offset:3px}
+
+/* ---------- wejście ---------- */
+
+.wchodzi{opacity:0;transform:translateY(10px);animation:pojaw .5s ease forwards}
+@keyframes pojaw{to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .wchodzi{opacity:1;transform:none}
+}
+
+@media (min-width:640px){
+  body{font-size:17px}
+  .szczyt{padding:88px 0 56px}
+  .szczyt h1{font-size:41px}
+}
+</style>
+</head>
+<body>
+
+<div class="otoczka" id="korzen"></div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   KONFIGURACJA — jedyne miejsce, które edytujesz.
+
+   Nowy materiał = jedna linijka w "pozycje".
+   Pola: tytul, opis, meta, plik, nowe (opcjonalne)
+   Plik wrzucasz do folderu /pliki i podajesz ścieżkę.
+   ══════════════════════════════════════════════════════════════ */
+
+const KONFIG = {
+  imie: "Adam",
+  instagram: "https://instagram.com/TWOJ_NICK",
+  nick: "@TWOJ_NICK",
+
+  naglowek: "Wszystko, co <em>rozdaję za darmo</em>",
+  wstep: "Materiały, które piszę przy okazji własnej nauki na medycynie. Bez zapisów, bez maila — klikasz i masz.",
+
+  dzialy: [
+    {
+      etykieta: "Metoda",
+      tytul: "Jak się uczyć",
+      opis: "Rzeczy, których nikt nie tłumaczy, a decydują o tym, ile zostaje po sesji.",
+      pozycje: [
+        {
+          tytul: "Mity o nauce i o I roku",
+          opis: "Osiem przekonań, w które prawdopodobnie uwierzyłeś, i pytania do siebie przy każdym z nich.",
+          meta: "PDF",
+          plik: "pliki/mity.pdf",
+          nowe: true
+        },
+        {
+          tytul: "Jak uzależnić się od nauki",
+          opis: "O budowaniu nawyku, który nie rozpada się w trzecim tygodniu.",
+          meta: "PDF",
+          plik: "pliki/nawyk.pdf"
+        },
+        {
+          tytul: "Gdzie się uczysz, ma znaczenie",
+          opis: "Pamięć zależna od kontekstu — co mówią badania i co z tego wynika dla twojego biurka.",
+          meta: "PDF",
+          plik: "pliki/kontekst.pdf"
+        }
+      ]
+    }
+  ],
+
+  stopka: "Jeśli coś z tego było przydatne — napisz mi, który fragment. Czytam każdą wiadomość.",
+  cta: "Napisz na Instagramie"
+};
+
+/* ══════════════════════════════════════════════════════════════
+   Poniżej nie trzeba nic zmieniać.
+   ══════════════════════════════════════════════════════════════ */
+
+function bezpieczny(tekst){
+  const d = document.createElement("div");
+  d.textContent = tekst;
+  return d.innerHTML;
+}
+
+function kartaHTML(p){
+  const znacznik = p.nowe ? '<span class="znacznik">Nowe</span>' : "";
+  return `
+    <a class="karta" href="${bezpieczny(p.plik)}" target="_blank" rel="noopener">
+      ${znacznik}
+      <h3>${bezpieczny(p.tytul)}</h3>
+      <p class="opis">${bezpieczny(p.opis)}</p>
+      <div class="stopka-karty">
+        <span class="meta">${bezpieczny(p.meta || "PDF")}</span>
+        <span class="akcja">Otwórz<span>→</span></span>
+      </div>
+    </a>`;
+}
+
+function dzialHTML(d){
+  const karty = (d.pozycje || []).map(kartaHTML).join("");
+  return `
+    <section class="dzial">
+      <div class="dzial-glowa">
+        <span class="etykieta">${bezpieczny(d.etykieta)}</span>
+        <h2>${bezpieczny(d.tytul)}</h2>
+        <p>${bezpieczny(d.opis)}</p>
+      </div>
+      <div class="stos">${karty}</div>
+    </section>`;
+}
+
+document.getElementById("korzen").innerHTML = `
+  <header class="szczyt">
+    <div class="podpis">${bezpieczny(KONFIG.nick)}</div>
+    <h1>${KONFIG.naglowek}</h1>
+    <p class="wstep">${bezpieczny(KONFIG.wstep)}</p>
+  </header>
+  ${KONFIG.dzialy.map(dzialHTML).join("")}
+  <footer class="spod">
+    <p>${bezpieczny(KONFIG.stopka)}</p>
+    <a class="wroc" href="${bezpieczny(KONFIG.instagram)}" target="_blank" rel="noopener">${bezpieczny(KONFIG.cta)} →</a>
+  </footer>
+`;
+
+/* Stopniowe wejście sekcji — wyłączone przy prefers-reduced-motion (CSS wyżej) */
+document.querySelectorAll(".szczyt, .dzial, .spod").forEach((el, i) => {
+  el.classList.add("wchodzi");
+  el.style.animationDelay = (i * 70) + "ms";
+});
+</script>
+
+</body>
+</html>
